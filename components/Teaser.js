@@ -1,4 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
+import Image from "next/image";
 
 const Teaser = ({ blok }) => {
   return (
@@ -7,11 +8,14 @@ const Teaser = ({ blok }) => {
         <h2 className="text-6xl font-bold font-serif text-primary mb-4">
           {blok.headline}
         </h2>
-        <img
-          src={blok.image.filename}
-          alt={blok.image.alt}
-          className="w-full"
-        />
+        <div className="relative w-full h-96">
+            <Image
+            src={blok.image.filename}
+            alt={blok.image.alt}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
       </div>
     </div>
   );
