@@ -1,7 +1,11 @@
 import { storyblokEditable } from "@storyblok/react";
 import { render } from "storyblok-rich-text-react-renderer";
+import Image from "next/image";
 
 const BlogPost = ({ blok }) => {
+  // Convert protocol-relative URL to absolute URL
+  const imageUrl = blok.image.startsWith("//") ? `https:${blok.image}` : blok.image;
+
   return (
     <div {...storyblokEditable(blok)}>
       <div className="bg-white-half w-full">
@@ -10,7 +14,15 @@ const BlogPost = ({ blok }) => {
             {blok.title}
           </h1>
           <p className="text-gray-500 text-lg max-w-lg">{blok.intro}</p>
-          <img className="w-full bg-gray-300 my-16" src={blok.image} />
+          <div className="w-full bg-gray-300 my-16">
+            <Image
+              src={imageUrl}
+              alt={blok.title}
+              layout="responsive"
+              width={800}
+              height={600}
+            />
+          </div>
         </div>
       </div>
       <div className="max-w-3xl mx-auto text-center pt-20 flex flex-col items-center">
