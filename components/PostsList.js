@@ -15,12 +15,11 @@ const PostLists = ({ blok }) => {
             className="max-w-4xl w-full px-10 my-4 py-6 rounded-lg shadow-md bg-white"
           >
             <div className="flex justify-between items-center">
-              <span className="font-light text-gray-600">
-                {`
-                    ${new Date(post.created_at).getDay()}.
-                    ${new Date(post.created_at).getMonth()}.
-                    ${new Date(post.created_at).getFullYear()}`}
-              </span>
+            <span className="font-light text-gray-600">
+              {`${new Date(post.created_at).getDate()}.
+              ${new Date(post.created_at).getMonth() + 1}.
+              ${new Date(post.created_at).getFullYear()}`}
+            </span>
             </div>
             <div className="mt-2">
               <Link href={`${lang}/blog/${post.slug}`}>
