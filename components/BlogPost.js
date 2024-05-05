@@ -14,13 +14,12 @@ const BlogPost = ({ blok }) => {
             {blok.title}
           </h1>
           <p className="text-gray-500 text-lg max-w-lg">{blok.intro}</p>
-          <div className="w-full bg-gray-300 my-16 relative">
+          <div className="w-full my-16 relative h-96">
             <Image
               src={imageUrl}
               alt={blok.title}
-              layout="responsive"
-              width={800} // Specify the width of the image
-              height={600} // Specify the height of the image
+              layout="fill"
+              objectFit="contain"
             />
           </div>
         </div>
