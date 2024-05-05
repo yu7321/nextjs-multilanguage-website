@@ -5,7 +5,7 @@ const Feature = ({ blok }) => {
   return (
     <div
       {...storyblokEditable(blok)}
-      className="py-16 max-w-sm p-2 sm:p-10 text-center flex flex-col items-center"
+      className="py-16 max-w-sm p-2 sm:p-10 text-center flex flex-col items-center border rounded-xl"
     >
       <DynamicIcon type={blok.icon} />
       <div className="px-6 py-4">
