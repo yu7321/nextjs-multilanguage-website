@@ -14,6 +14,7 @@ const Teaser = ({ blok }) => {
             alt={blok.image.alt}
               layout="fill"
               objectFit="cover"
+              priority={true}
             />
           </div>
       </div>

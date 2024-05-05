@@ -20,6 +20,7 @@ const BlogPost = ({ blok }) => {
               alt={blok.title}
               layout="fill"
               objectFit="contain"
+              priority={true}
             />
           </div>
         </div>
